@@ -1,11 +1,14 @@
-import { StrictMode } from "react";
+import {  useState,StrictMode} from "react";
 import {render} from "react-dom";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
+import ThemeContext from "./ThemeContext";
 
 const App = () => {
+  const theme = useState("darkgreen")
   return (
+    <ThemeContext.Provider value = {theme}>
     <div>
       <Router>
         <header>
@@ -13,6 +16,7 @@ const App = () => {
         </header>
         <Switch>
           <Route path="/details/:id">
+            <Details theme = {theme}/>
             <Details />
           </Route>
           <Route path="/">
@@ -21,6 +25,7 @@ const App = () => {
         </Switch>
       </Router>
     </div>
+    </ThemeContext.Provider>
   );
 };
 
