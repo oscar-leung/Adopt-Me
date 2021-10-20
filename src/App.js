@@ -6,7 +6,7 @@ import SearchParams from "./SearchParams";
 import ThemeContext from "./ThemeContext";
 
 const App = () => {
-  const theme = useState("darkgreen")
+  const theme = useState("lightblue")
   return (
     <ThemeContext.Provider value = {theme}>
     <div>
@@ -16,7 +16,6 @@ const App = () => {
         </header>
         <Switch>
           <Route path="/details/:id">
-            <Details theme = {theme}/>
             <Details />
           </Route>
           <Route path="/">
