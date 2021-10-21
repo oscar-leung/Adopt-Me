@@ -1,3 +1,5 @@
+/* eslint-disable import/namespace */
+/* eslint-disable import/named */
 import { Link } from "react-router-dom";
 
 const Pet = (props) => {
